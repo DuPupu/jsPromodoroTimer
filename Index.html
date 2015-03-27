@@ -1,0 +1,45 @@
+<html>
+<head>
+	<title>50 min count</title>
+</head>
+<body>
+<style type="text/css">
+	body
+	{
+		background-color: #000;
+	}
+	#c 
+	{
+		font-size: 200px;text-align: center;vertical-align:middle;margin: 20% 0;position: relative;background-color: #333;color: #ccc;font-family: "HelveticaNeue-UltraLight" ;
+	}
+</style>
+
+<div id="c" onclick="tri()">50</div>
+
+<script type="text/javascript">
+var l=51;
+var triggered=false;
+function tri(){
+
+	if(triggered==false){
+		triggered=true;
+		cc();
+	}
+
+}
+function cc(){
+	l--;
+	document.getElementById("c").innerHTML=l;
+	var cl=5*l;
+	document.getElementById("c").style.color="rgb(" + 255 + "," + cl + "," + cl + ")";
+	if(l==0){
+		alert('Time\'s up!');
+		l=51;
+		triggered=false;
+		return;
+		}
+	setTimeout("cc()", .6E5);
+}
+</script>
+</body>
+</html>
